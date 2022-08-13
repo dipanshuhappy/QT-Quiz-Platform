@@ -3,5 +3,7 @@ import App from "./App.vue";
 import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
+import Equal from "equal-vue";
+import "equal-vue/dist/style.css";
 
-createApp(App).use(store).use(router).mount("#app");
+createApp(App).use(Equal).use(store).use(router).mount("#app");
