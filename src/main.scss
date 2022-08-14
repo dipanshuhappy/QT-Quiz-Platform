@@ -2,27 +2,36 @@
 @import "@inkline/inkline/css/mixins";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 :root {
-  --color--primary: red;
-  --pre--color: #9fe4fe;
+  --text--color: #9fe4fe;
+  --pre--color: var(--text--color);
   --font-family-primary--base: "Poppins";
 }
 @include i-button() {
   padding-top: 2rem;
   padding-bottom: 2rem;
   border-radius: 1.2rem;
+  color: var(--text--color);
+}
+@include i-modal() {
+  @include variant("dark") {
+    ----footer--background: #6f55a8;
+    ----header--background: #1d3158;
+    ----body--padding: 0px;
+    ----border-radius: 4em;
+    ----body--border-style: 0px;
+    padding: 0;
+    margin: 0;
+    border: 0px;
+  }
 }
 .glassmorphism {
-  // color: var(--color--white);
-  // background: transparent;
-  /* From https://css.glass */
-  /* From https://css.glass */
-  /* From https://css.glass */
   background: rgba(254, 247, 245, 0.09);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(0.1px);
   -webkit-backdrop-filter: blur(0.1px);
   border: 1px solid rgba(254, 247, 245, 1);
+  z-index: 999;
 }
 .d3 {
   color: #dcf6ff;

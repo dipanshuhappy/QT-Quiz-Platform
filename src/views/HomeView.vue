@@ -1,14 +1,5 @@
 <template>
-  <i-layout
-    :style="{
-      'background-size': 'cover',
-      'background-image': 'url(' + require('../assets/home_bg.png') + ')',
-    }"
-  >
-    <i-layout-header>
-      <p class="lead _font-family:monospace _float:right _margin:1">Home</p>
-    </i-layout-header>
-
+  <layout :background-image="backgroundImage">
     <i-layout vertical>
       <i-layout-content class="_margin-left:2">
         <div class="d3">AIESEC QUIZZIC</div>
@@ -24,26 +15,34 @@
       </i-layout-content>
       <i-layout-aside class="_flex:fill">
         <div class="quiz-button">
-          <i-button class="glassmorphism">Take Quiz</i-button>
+          <i-button
+            class="glassmorphism"
+            @click="isEnterQuizIdModalVisible = true"
+            >Take Quiz</i-button
+          >
+          <enter-quiz-id-modal v-model:show-modal="isEnterQuizIdModalVisible" />
           <i-button class="glassmorphism">Make Quiz</i-button>
         </div>
       </i-layout-aside>
     </i-layout>
-    <i-layout-footer> Footer </i-layout-footer>
-  </i-layout>
+  </layout>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import EnterQuizIdModal from "@/components/EnterQuizIdModal.vue";
 export default defineComponent({
   name: "HomeView",
+  components: { EnterQuizIdModal },
+  data() {
+    return {
+      isEnterQuizIdModalVisible: false,
+      backgroundImage: require("../assets/home_bg.png"),
+    };
+  },
 });
 </script>
 <style>
-.layout {
-  width: 100%;
-  min-height: 100%;
-}
 .layout-aside {
   flex: 1;
 }

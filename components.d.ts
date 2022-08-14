@@ -7,13 +7,17 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    EnterQuizIdModal: typeof import('./src/components/EnterQuizIdModal.vue')['default']
     IButton: typeof import('@inkline/inkline')['IButton']
-    IButtonGroup: typeof import('@inkline/inkline')['IButtonGroup']
+    ICard: typeof import('@inkline/inkline')['ICard']
+    IInput: typeof import('@inkline/inkline')['IInput']
     ILayout: typeof import('@inkline/inkline')['ILayout']
     ILayoutAside: typeof import('@inkline/inkline')['ILayoutAside']
     ILayoutContent: typeof import('@inkline/inkline')['ILayoutContent']
     ILayoutFooter: typeof import('@inkline/inkline')['ILayoutFooter']
     ILayoutHeader: typeof import('@inkline/inkline')['ILayoutHeader']
+    IModal: typeof import('@inkline/inkline')['IModal']
+    Layout: typeof import('./src/components/Layout.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

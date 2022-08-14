@@ -12,7 +12,6 @@ import "./main.scss";
 createApp(App)
   .use(Inkline, {
     components,
-    colorMode: "dark",
   })
   .use(store)
   .use(router)
