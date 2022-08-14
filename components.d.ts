@@ -9,7 +9,6 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     EnterQuizIdModal: typeof import('./src/components/EnterQuizIdModal.vue')['default']
     IButton: typeof import('@inkline/inkline')['IButton']
-    ICard: typeof import('@inkline/inkline')['ICard']
     IInput: typeof import('@inkline/inkline')['IInput']
     ILayout: typeof import('@inkline/inkline')['ILayout']
     ILayoutAside: typeof import('@inkline/inkline')['ILayoutAside']

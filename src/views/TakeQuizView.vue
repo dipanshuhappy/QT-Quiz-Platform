@@ -24,7 +24,11 @@
           </a>
         </div>
       </div>
-      <i-button class="glassmorphism start-btn">Start</i-button>
+      <i-button
+        class="glassmorphism start-btn"
+        @click="() => $router.push('./4/question')"
+        >Start</i-button
+      >
     </i-layout>
   </layout>
 </template>

@@ -12,7 +12,7 @@
       <i-button
         block
         class="glassmorphism _padding:1 _margin-y:4"
-        @click="() => $router.push('take-quiz')"
+        @click="() => $router.push('take-quiz/2')"
         >Submit</i-button
       >
     </div>
