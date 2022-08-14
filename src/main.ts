@@ -4,6 +4,16 @@ import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
 import Equal from "equal-vue";
-import "equal-vue/dist/style.css";
+import { Inkline, components } from "@inkline/inkline";
+import "@inkline/inkline/inkline.scss";
+import "./main.scss";
+// import "equal-vue/dist/style.css";
 
-createApp(App).use(Equal).use(store).use(router).mount("#app");
+createApp(App)
+  .use(Inkline, {
+    components,
+    colorMode: "dark",
+  })
+  .use(store)
+  .use(router)
+  .mount("#app");
