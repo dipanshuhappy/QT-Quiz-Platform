@@ -17,6 +17,8 @@ declare module '@vue/runtime-core' {
     ILayoutHeader: typeof import('@inkline/inkline')['ILayoutHeader']
     IModal: typeof import('@inkline/inkline')['IModal']
     Layout: typeof import('./src/components/Layout.vue')['default']
+    QuestionOptions: typeof import('./src/components/QuestionOptions.vue')['default']
+    QuestionTitle: typeof import('./src/components/QuestionTitle.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

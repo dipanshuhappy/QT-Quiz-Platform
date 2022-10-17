@@ -2,11 +2,12 @@
   <layout :background-image="backgroundImage">
     <i-layout vertical>
       <i-layout-content class="_margin-left:2">
-        <div class="d3">AIESEC QUIZZIC</div>
+        <div class="d3">QT Quiz Platform</div>
         <p
           class="lead _font-family:monospace _white-space:normal _font-size:lg"
         >
-          Welcome to AIESEC Quizzic, this is the website designed for people who
+          Welcome to QT Quiz Platform, this is the website designed for people
+          who
           <br />
           want to find their suitable programs in AIESEC. While doing the quiz,
           <br />

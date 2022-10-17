@@ -1,11 +1,11 @@
 <template>
   <layout :background-image="require('../assets/second_bg.png')">
     <i-layout>
-      <p class="d3 _margin-x:auto _text-align:center">AIESEC QUIZZIC</p>
+      <p class="d3 _margin-x:auto _text-align:center">Mr.Kapil CSE Quiz</p>
       <p
         class="_font-style:monospace _margin-x:auto _text-align:center _white-space:normal _font-size:lg"
       >
-        Welcome to AIESEC Quizzic, your music is playing
+        Welcome to Mr. Kapil CSE, bellow are the instructions
       </p>
       <div class="info-cards">
         <div

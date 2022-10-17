@@ -1,37 +1,39 @@
 <template>
   <layout :background-image="require('../assets/second_bg.png')">
     <i-layout>
-      <div class="question-and-option">
-        <div class="glassmorphism question">Are you introvert/extrovert?</div>
-      </div>
-      <div class="options">
-        <div
-          class="option glassmorphism"
-          v-for="(option, index) in options"
-          :key="index"
-        >
-          {{ option.option }}
-        </div>
-      </div>
+      <question-title :title="questions[currentQuestionIndex].title" />
+      <question-options v-if="questions[currentQuestionIndex].type==='options'"  :options="questions[currentQuestionIndex].options"/>
     </i-layout>
+    <i-button class="glassmorphism next-btn">Next</i-button>
   </layout>
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
+import QuestionTitle from "@/components/QuestionTitle.vue";
 
 export default defineComponent({
   data() {
     return {
-      options: [
+      questions: [
         {
-          option: "Introvert",
+          title: "Are you an introvert",
+          type: "options",
+          options: [
+            {
+              id: "A",
+              option: "yes",
+            },
+            {
+              id: "B",
+              option: "No",
+            },
+          ] as Option[],
         },
-        {
-          option: "Extrovert",
-        },
-      ],
+      ] as Question[],
+      currentQuestionIndex: 0,
     };
   },
+  components: { QuestionTitle },
 });
 </script>
 <style>
@@ -40,33 +42,11 @@ export default defineComponent({
   position: absolute;
   justify-content: space-evenly;
 }
-.question {
-  font-weight: 500;
-  font-size: xx-large;
-  text-align: center;
-  word-spacing: 0.5rem;
-  letter-spacing: 0.2rem;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-  max-width: 60ch;
-  overflow-wrap: break-word;
+
+.next-btn {
+  width: 20%;
   margin-inline: auto;
-  border-radius: 2rem;
-  padding-inline: 1rem;
-  border-radius: 50px !important;
-}
-.options {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  grid-auto-rows: 240px;
-}
-.option {
-  display: grid;
-  place-content: center;
-  place-self: center;
-  width: 50%;
-  height: 50%;
+  margin-top: 2em;
 }
 @media screen and (min-width: 600px) {
   .option-tall {
