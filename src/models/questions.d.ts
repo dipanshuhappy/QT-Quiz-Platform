@@ -10,7 +10,7 @@ declare type Question = {
   image: string?;
   type: "options" | "fill-in-blank";
   title: string;
-  options: Option[]?;
+  options: Option[] | undefined;
   answer: ""?;
 };
 declare type Option = {
