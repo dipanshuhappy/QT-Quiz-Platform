@@ -24,6 +24,13 @@
     border: 0px;
   }
 }
+@include i-input() {
+  @include variant("light") {
+    ----background: #75b1c6;
+    ----color: whitesmoke;
+    ----prefix-suffix--color: #6f55a8;
+  }
+}
 .glassmorphism {
   background: rgba(254, 247, 245, 0.09);
   border-radius: 16px;
