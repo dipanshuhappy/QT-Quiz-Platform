@@ -16,7 +16,6 @@ declare module '@vue/runtime-core' {
     ILayoutFooter: typeof import('@inkline/inkline')['ILayoutFooter']
     ILayoutHeader: typeof import('@inkline/inkline')['ILayoutHeader']
     IModal: typeof import('@inkline/inkline')['IModal']
-    ITextarea: typeof import('@inkline/inkline')['ITextarea']
     Layout: typeof import('./src/components/Layout.vue')['default']
     QuestionOptions: typeof import('./src/components/QuestionOptions.vue')['default']
     QuestionsFillInBlank: typeof import('./src/components/QuestionsFillInBlank.vue')['default']

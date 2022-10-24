@@ -10,9 +10,13 @@
         v-else-if="questions[currentQuestionIndex].type === 'fill-in-blank'"
       />
     </i-layout>
-    <i-button class="glassmorphism next-btn" @click="currentQuestionIndex++"
+    <i-button
+      v-if="currentQuestionIndex != questions.length - 1"
+      class="glassmorphism next-btn"
+      @click="currentQuestionIndex++"
       >Next</i-button
     >
+    <i-button v-else class="glassmorphism next-btn">Done</i-button>
   </layout>
 </template>
 <script lang="ts">
@@ -41,6 +45,34 @@ export default defineComponent({
         {
           title: "What is your age",
           type: "fill-in-blank",
+        },
+        {
+          title: "Are you an introvert",
+          type: "options",
+          options: [
+            {
+              id: "A",
+              option: "yes",
+            },
+            {
+              id: "B",
+              option: "No",
+            },
+          ] as Option[],
+        },
+        {
+          title: "Are you an introvert",
+          type: "options",
+          options: [
+            {
+              id: "A",
+              option: "yes",
+            },
+            {
+              id: "B",
+              option: "No",
+            },
+          ] as Option[],
         },
       ] as Question[],
       currentQuestionIndex: 0,
