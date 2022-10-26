@@ -1,20 +1,20 @@
 <template>
   <layout :background-image="require('../assets/second_bg.png')">
     <i-layout>
-      <p class="d3 _margin-x:auto _text-align:center">Mr.Kapil CSE Quiz</p>
+      <p class="d3 _margin-x:auto _text-align:center">{{ quiz.title }}</p>
       <p
         class="_font-style:monospace _margin-x:auto _text-align:center _white-space:normal _font-size:lg"
       >
-        Welcome to Mr. Kapil CSE, bellow are the instructions
+        Welcome to {{ quiz.title }} , bellow are the instructions
       </p>
       <div class="info-cards">
         <div
           class="glassmorphism info-card"
-          v-for="(cardInfo, index) in cardInfos"
+          v-for="(rule, index) in quiz.rules"
           :key="index"
         >
           <p class="lead">
-            {{ cardInfo.message }}
+            {{ rule }}
           </p>
           <a
             class="_font-style:monospace _font-size:small"
@@ -37,6 +37,63 @@ import { defineComponent } from "vue";
 export default defineComponent({
   data() {
     return {
+      quiz: {
+        id: "kdsljfld",
+        title: "Mr.Kapil CSE Quiz",
+        rules: [
+          "Answer ten questions to finish the quiz",
+          "Receive the result and know more about yourself ",
+          "Find your suitable program based on your answers",
+        ],
+        questions: [
+          {
+            title: "Are you an introvert",
+            type: "options",
+            options: [
+              {
+                id: "A",
+                option: "yes",
+              },
+              {
+                id: "B",
+                option: "No",
+              },
+            ] as Option[],
+          },
+          {
+            title: "What is your age",
+            type: "fill-in-blank",
+          },
+          {
+            title: "Are you an introvert",
+            type: "options",
+            options: [
+              {
+                id: "A",
+                option: "yes",
+              },
+              {
+                id: "B",
+                option: "No",
+              },
+            ] as Option[],
+          },
+          {
+            title: "Are you an introvert",
+            type: "options",
+            options: [
+              {
+                id: "A",
+                option: "yes",
+              },
+              {
+                id: "B",
+                option: "No",
+              },
+            ] as Option[],
+          },
+        ] as Question[],
+      } as Quiz,
       cardInfos: [
         {
           message: "Answer ten questions to finish the quiz",
